@@ -79,3 +79,7 @@ export const CommandsOutput: any = styled.pre`
     scrollbar-width: 0.5em;
   }
 `;
+
+export const CommandFormErrors = styled.div`
+  color: red;
+`;

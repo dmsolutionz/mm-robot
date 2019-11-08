@@ -7,10 +7,12 @@ import {
   CommandsFormButton,
   CommandsOutput,
   CommandsFlex,
-  CommandsOutputWrapper
+  CommandsOutputWrapper,
+  CommandFormErrors
 } from "./Commands-styled";
+import { getError } from "../../utils/error.util";
 
-const table = new Table();
+const table = new Table(5, 5);
 const controller = new Controller(table);
 
 export function Commands() {
@@ -19,10 +21,13 @@ export function Commands() {
   const handleSubmit = (evt: React.FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
     controller.execute(value);
+    // Reset the input on each submit
     reset();
   };
 
+  // Default message
   let actions = "Please place the robot frist";
+
   if (controller.robot) {
     actions = controller.robot.toString();
   }
@@ -34,6 +39,7 @@ export function Commands() {
           <label>Plese enter a command:</label>
           <input type="text" {...bind} />
           <CommandsFormButton type="submit">Execute command</CommandsFormButton>
+          <CommandFormErrors>{getError()}</CommandFormErrors>
         </CommandsForm>
 
         <CommandsOutputWrapper>

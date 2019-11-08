@@ -42,15 +42,19 @@ export default class Robot {
     switch (this.direction) {
       case Directions.NORTH:
         --this.position.y;
+
         break;
       case Directions.EAST:
         ++this.position.x;
+
         break;
       case Directions.SOUTH:
         ++this.position.y;
+
         break;
       case Directions.WEST:
         --this.position.x;
+
         break;
       default:
     }
@@ -58,6 +62,8 @@ export default class Robot {
   }
 
   public toString() {
-    return `${this.position.x}, ${this.position.y}, ${this.direction}`;
+    return `${this.position.x}, ${this.position.y}, ${
+      Directions[this.direction]
+    }`;
   }
 }

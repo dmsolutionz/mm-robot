@@ -1,3 +1,11 @@
 html {
   background: papayawhip;
 }
+
+.App h1 {
+  padding-left: 1em;
+}
+
+.commands {
+  padding-left: 3em;
+}

@@ -7,6 +7,11 @@ const App: React.FC = () => {
     <div className="App">
       <h1>Robot simulation</h1>
       <Commands />
+      <div className="commands">
+        The following commands are available:
+        <br />
+        PLACE X,Y,F MOVE LEFT RIGHT REPORT
+      </div>
     </div>
   );
 };
