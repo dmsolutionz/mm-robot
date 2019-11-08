@@ -41,19 +41,22 @@ export default class Robot {
   public move(): boolean {
     switch (this.direction) {
       case Directions.NORTH:
-        --this.position.y;
-
+        let next = this.position.y + 1;
+        if (this.position.y <= 4) this.position.y = next;
         break;
       case Directions.EAST:
-        ++this.position.x;
+        let next2 = this.position.x + 1;
+        if (this.position.x <= 4) this.position.x = next2;
 
         break;
       case Directions.SOUTH:
-        ++this.position.y;
+        let next3 = this.position.y - 1;
+        if (this.position.y >= 1) this.position.y = next3;
 
         break;
       case Directions.WEST:
-        --this.position.x;
+        let next4 = this.position.x - 1;
+        if (this.position.x >= 1) this.position.x = next4;
 
         break;
       default:
